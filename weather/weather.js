@@ -8,14 +8,10 @@ function getWeather(coords, callback) {
       json: true
     },
     (error, response, body) => {
-      if (error) {
-        console.log(`error: `, error);
-        callback("Unable to connect to forecast servers", null);
-      } else if (body.code === 400) {
-        callback(body.error);
-      } else if (body) {
-        const result = body.currently;
-        callback(null, result);
+      if (!error && response.statusCode === 200) {
+        callback(null, body.currently);
+      } else {
+        callback("Unable to fetch weather");
       }
     }
   );
