@@ -4,12 +4,17 @@
   "description": "a weather app for education purposes",
   "main": "app.js",
   "scripts": {
+    "weather": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "weather": "bin/runWeather.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "request": "^2.81.0",
+    "shelljs": "^0.7.8",
     "yargs": "^8.0.1"
   }
 }
