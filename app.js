@@ -19,13 +19,14 @@ geocode
   .getCoords(argv.address)
   .then(result => {
     console.log(JSON.stringify(result, undefined, 2));
-    weather.getWeather(result.coords, (error, result) => {
-      if (error) {
-        console.log(error);
-      } else {
+    weather
+      .getWeather(result.coords)
+      .then(result => {
         console.log(JSON.stringify(result, undefined, 2));
-      }
-    });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   })
   .catch(error => {
     console.log(error);
