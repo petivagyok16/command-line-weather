@@ -15,10 +15,9 @@ const argv = yargs
   .alias("help", "h").argv;
 // console.log(argv);
 
-geocode.getCoords(argv.address, (error, result) => {
-  if (error) {
-    console.log(error);
-  } else if (result) {
+geocode
+  .getCoords(argv.address)
+  .then(result => {
     console.log(JSON.stringify(result, undefined, 2));
     weather.getWeather(result.coords, (error, result) => {
       if (error) {
@@ -27,5 +26,7 @@ geocode.getCoords(argv.address, (error, result) => {
         console.log(JSON.stringify(result, undefined, 2));
       }
     });
-  }
-});
+  })
+  .catch(error => {
+    console.log(error);
+  });
