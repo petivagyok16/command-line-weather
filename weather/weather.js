@@ -1,7 +1,7 @@
 const request = require("request");
 const apikey = "8496da6d689f3d7a78517b7cca5f7460";
 
-function getWeather(coords) {
+function fetchWeather(coords) {
   return new Promise((resolve, reject) => {
     request(
       {
@@ -19,4 +19,4 @@ function getWeather(coords) {
   });
 }
 
-module.exports.getWeather = getWeather;
+module.exports.fetchWeather = fetchWeather;

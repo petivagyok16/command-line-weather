@@ -8,7 +8,7 @@ const getWeather = () => {
     .then(result => {
       console.log(JSON.stringify(result, undefined, 2));
       weather
-        .getWeather(result.coords)
+        .fetchWeather(result.coords)
         .then(result => {
           console.log(JSON.stringify(result, undefined, 2));
         })
@@ -21,4 +21,4 @@ const getWeather = () => {
     });
 };
 
-module.exports.getWeather = getWeather();
+module.exports = getWeather;

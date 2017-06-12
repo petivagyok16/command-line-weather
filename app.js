@@ -1,1 +1,1 @@
-require("./get-weather");
+require("./get-weather")();
