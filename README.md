@@ -8,7 +8,7 @@ This tiny node app had been made for education purposes.
 - `Tested on OSX`
 
 ### Usage
-First: `npm install`
+`npm install`
 
 Commands:
 - `weather [city name]` or `npm run weather [city name]`
