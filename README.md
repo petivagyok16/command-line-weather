@@ -9,6 +9,7 @@ This tiny node app had been made for education purposes.
 
 ### Usage
 1. `npm install`
+2. `npm link`
 
 Commands:
 - `weather [city name]` or `npm run weather [city name]`
