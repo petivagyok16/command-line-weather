@@ -11,6 +11,5 @@ const argv = yargs
   })
   .help()
   .alias("help", "h").argv;
-// console.log(`yargs argv: `, argv);
 
 module.exports.argv = argv;
